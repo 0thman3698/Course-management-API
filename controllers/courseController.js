@@ -57,7 +57,7 @@ const createCourse = async (req, res)=>{
         await course.save();
     
         res.status(201).json({
-            status:'fail',
+            status:'success',
             message: 'Course added successfully',
             course
         })
