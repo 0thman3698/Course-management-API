@@ -10,7 +10,17 @@ const app = express();
 
 app.use(express.json())
 
+app.get('/', (req, res) => {
+    res.send(`
+      <div style="font-family: Arial, sans-serif; text-align: center; margin-top: 50px;">
+        <h1 style="color: #4CAF50;">👋 Welcome to the Course Management API</h1>
+        <p>Use <code>/api/v1/courses</code> to access the available endpoints.</p>
+      </div>
+    `);
+  });
+  
 app.use('/api/v1/courses', courseRouter)
+
 
 app.use((req, res, next) => {
     res.status(404).json({
